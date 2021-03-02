@@ -12,7 +12,7 @@ for (let x = 0; x <= total; x++) {
     const amount = parseFloat((Math.floor(Math.random() * 100)) + "." + (Math.floor(Math.random() * 100)))
     numbers.push(amount)
 }
-// console.log('------ starting perf')
+console.log('------ starting perf')
 // console.log('numbers', numbers)
 
 

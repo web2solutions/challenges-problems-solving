@@ -1,0 +1,6 @@
+var fs = require('fs');
+fs.rename('a.txt', 'b.txt');
+fs.stat('b.txt', function(er, stats) {
+  if ( er ) throw er;
+  console.log(JSON.stringify(stats));
+});

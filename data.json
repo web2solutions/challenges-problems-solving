@@ -1,0 +1,210 @@
+var x = {
+    "nome": "JOÃO DOS SANTOS SILVA",
+    "nascimento": "02/02/1994",
+    "mae": "MIRIAM AGUIAR DOS SANTOS SILVA",
+    "pai": "NULL",
+    "sexo": "m",
+    "documento": "https://inrpublicacoes.com.br/sistema/kcfinder_up/images/cartao-cpf.jpg",
+    "cpf": "019.139.545-52",
+    "nome_social": "",
+    "raca_cor": "04",
+    "raca_descricao": "Amarela",
+    "nacionalidade": "Brasileiro",
+    "pais_nascimento": "Brasil",
+    "municipio_nascimento": "Serra - ES",
+    "email_principal": "joaosant@gmail.com,joao@alertrack.com.br",
+    "nomade": false,
+    "obito": false,
+    "estado_civil": "CASADA",
+    "titulo_eleitor": "024046801420",
+    "pais_residencia": "Brasil",
+    // ========
+    "escolaridade": "EDUCACAO SUPERIOR COMPLETA",
+    "rendapresumida": "30934.7",
+    "encontrado_receita": true,
+    "status_receita": "REGULAR",
+    "rg": "1322231322",
+    "rg_emissor": "10",
+    "rg_emissor_descricao": "SSP - SECRETARIA DE SEGURAN\u00c7A PUBLICA",
+    "rg_uf": "BA",
+    "rg_emissao": "08/01/2012",
+    "certidao": {
+        "cartorio": "REGISTRO CIVIL",
+        "data_emissao": "08/03/1994"
+    },
+    // =======
+    "enderecos": [{
+        "municipio": "Serra - ES",
+        "cep": "29.160-510",
+        "tipo_logradouro": "081",
+        "logradouro": "RUA MAMORE",
+        "numero": "15"
+    }],
+    "telefones": [{
+        "telefone": "279811132222",
+        "tipo": "CELULAR",
+        "parantesco": "IRMA",
+        "nome": "JULIA DOS SANTOS SILVA"
+    }, {
+        "telefone": "27981122132222",
+        "tipo": "CELULAR",
+        "parantesco": "IA",
+        "nome": "ANDRESSA DOS SANTOS TEMMER"
+    }, {
+        "telefone": "279911132222",
+        "tipo": "CELULAR",
+        "parantesco": "MÃE",
+        "nome": "MIRIAM AGUIAR DOS SANTOS SILVA"
+    }],
+    "imoveis": {
+        "endereco": "R ITALINA PEREIRA MOTTA",
+        "numero": "15",
+        "bairro": "JARDIM CAMBURI",
+        "cep": "29090370",
+        "cidade": "VITORIA",
+        "uf": "ES"
+    },
+    "sociedades": [{
+        "empresasocio": "TEMER ADVOGADOS ASSOCIADOS",
+        "cnpjempresasocio": "05397402000195",
+        "teleempresasocio": "",
+        "enderempresasocio": "R PEDROSO ALVARENGA",
+        "endernumempresasocio": "900",
+        "endercompempresasocio": "10 ANDAR",
+        "enderbairroempresasocio": "ITAIM BIBI",
+        "endercidadeempresasocio": "SAO PAULO",
+        "endercepempresasocio": "04531003",
+        "enderufempresasocio": "SP",
+        "cargosociedade": "28",
+        "entradasociedade": "19/11/2002",
+        "participacaosociedade": "98"
+    }, {
+        "empresasocio": "TABAPUA INVESTIMENTOS E PARTICIPACOES LTDA",
+        "cnpjempresasocio": "12982441000115",
+        "teleempresasocio": "",
+        "enderempresasocio": "R PEDROSO ALVARENGA",
+        "endernumempresasocio": "900",
+        "endercompempresasocio": "ANDAR 9 CONJ 92",
+        "enderbairroempresasocio": "ITAIM BIBI",
+        "endercidadeempresasocio": "SAO PAULO",
+        "endercepempresasocio": "04531003",
+        "enderufempresasocio": "SP",
+        "cargosociedade": "22",
+        "entradasociedade": "01/12/2010",
+        "participacaosociedade": "99.90"
+    }],
+    "veiculos": [{
+        "placa": "FLQ8436",
+        "chassi": "42GKT69L0EG229128",
+        "renavam": "587817230",
+        "renavan": "587817130",
+        "combustivel": "",
+        "anomodelo": "2013",
+        "endereco": "R PEDROSO ALVARENGA",
+        "numero": "912",
+        "complemento": "AP101",
+        "bairro": "ITAIM BIBI",
+        "cidade": "SAO PAULO",
+        "uf": "SP",
+        "marcamodelo": "CHEV PRISMA 14AT LTZ",
+        "datainclusao": "01/11/2013",
+        "datalicenca": "16/05/2014",
+        "anobase": "2013"
+    }],
+    
+    "rendas": [{
+        "valorrenda": "R$ 33.228,17",
+        "empresapagadora": "FUNDACAO SAO PAULO"
+    }],
+    "clt": {
+        "pis": "10033221578",
+        "ctps": "296",
+        "grauinstrucao": "EDUCACAO SUPERIOR COMPLETA",
+        "dataadmissao": "01/01/2011",
+        "rendaestimada": "30934,7",
+        "cnae": "8411600",
+        "dtadmissao": "",
+        "cbo": "111405"
+    },
+    "dominio": {
+        "site": "alertrack.com.br",
+        "versao": "2019-09-07",
+        "ip": [{
+            "ip": "179.183.29.114",
+            "country": "BR",
+            "country_zip": "40010000",
+            "country_state": "BA",
+            "country_city": "Lauro de Freitas",
+            "lat": -12.94180011749267578125,
+            "lng": -38.37142181396484375
+        }]
+    },
+    "links": [{
+            "type": "twitter",
+            "url": "https://twitter.com/alertrack",
+            "profile_name": "Alertrack",
+            "profile_username": "@alertrack",
+            "profile_bio": "Alertrack - Empresa Pioneira em Rastreamento de Veiculos. Única Competente no Brasil!",
+            "profile_location": "Vitória - ES",
+            "profile_stats_tweets": 0,
+            "profile_stats_followers": "4",
+            "profile_stats_following": "20",
+            "profile_stats_likes": 0,
+            "profile_created_at": "Participa desde agosto de 2012",
+            "profile_avatar_link": "https://pbs.twimg.com/profile_images/2511401930/62e1zxhcwoljs340vw5j_400x400.gif",
+            "profile_avatar_image": "https://storage.sac.digital/storage/url/profiles/twitter/2019/09/07/ca6037b5974c5b0dac440bcdfb299bce.jpg"
+        }],
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSr5txu_2HrAyerPpFz93-XMZmbiPNiMt-Rrw&usqp=CAU",
+    "servicos": {
+        "dotz": {
+            "status": true,
+            "cpf": "019.139.545-52"
+        },
+        "netflix": {
+            "status": true,
+            "email": "joaosant@gmail.com"
+        },
+        "123milhas": {
+            "status": false
+        },
+        "parebem": {
+            "status": true,
+            "email": "joaosant@gmail.com"
+        },
+        "carrefour": {
+            "status": false
+        },
+        "promodebolso": {
+            "status": true
+        },
+        "elo": {
+            "status": false
+        },
+        "fies": {
+            "status": true,
+            "cpf": "019.139.545-52",
+            "situacao": "Conclu\u00eddo"
+        },
+        "petrobras": {
+            "status": true
+        },
+        "ipiranga": {
+            "status": true
+        },
+        "auxilio_emergencial": {
+            "status": true
+        },
+        "unimed_es": {
+            "status": true
+        },
+        "cnh": {
+            "status": true,
+            "nota_prova": "21 de 30",
+            "categoria": "AB",
+            "code": "ES129192"
+        },
+        "globoplay": {
+            "status": true
+        }
+    }
+}

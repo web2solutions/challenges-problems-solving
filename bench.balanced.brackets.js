@@ -6,34 +6,36 @@ console.log('------ prepare data')
 const STR = '1 2 5 3 6 4'
 
 let isMatchingBrackets = function (str) {
-  let dictionary = {
+  const allBrackets = []
+  const map = {
+    '{': '}',
     '(': ')',
     '[': ']',
-    '{': '}'
   }
-  let queue = [];
-
-  for (let i = 0; i < str.length; i++) {
-    // If character is an opening brace add it to a queue
-    if (str[i] === '(' || str[i] === '{' || str[i] === '[') {
-      queue.push(str[i])
-    }
-    else {
-      let last = queue.pop();
-      // if last element is  not a properly closing bracket
-      if (str[i] !== dictionary[last]) {
+  str = str.replace(new RegExp('[0-9]', 'g'), '')
+  str = str.replace(new RegExp('[a-z A-Z]', 'g'), '')
+  for (let x = 0; x < str.length; x++) {
+    const char = str[x]
+    if (char === '[' || char === '(' || char === '{') {
+      allBrackets.push(char)
+    } else {
+      const lastItem = allBrackets.pop()
+      if (char !== map[lastItem]) {
+        console.log(map[lastItem])
         return false
       }
     }
   }
-  // if queue is not clear
-  if (queue.length !== 0) {
-    return false
+  
+  if (allBrackets.length !== 0) {
+   return false
   }
 
   return true
 }
 
+console.log(isMatchingBrackets("(a[0]+b[2c[6]]) {24 + 53}")); // returns true
+console.log(isMatchingBrackets("(){}")); // returns true
 console.log(isMatchingBrackets("(){}")); // returns true
 console.log(isMatchingBrackets("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]")); // returns true
 console.log(isMatchingBrackets("({(()))}}"));  // returns false

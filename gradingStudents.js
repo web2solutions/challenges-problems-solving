@@ -1,4 +1,5 @@
 'use strict'
+// https://www.hackerrank.com/challenges/grading/problem?h_r=profile
 
 function gradingStudents(grades) {
   const maxDiffer = 3

@@ -7,6 +7,29 @@ process.stdin.setEncoding('utf-8');
 
 let inputString = '';
 
+const value = ''
+
+console.log(JSON.stringify(value).length)
+
+
+const typeSizes = {
+  "undefined": () => 0,
+  "boolean": () => 8,
+  "number": () => 8,
+  "string": item => 2 * item.length,
+  "object": item => !item ? 0 : Object
+    .keys(item)
+    .reduce((total, key) => sizeOf(key) + sizeOf(item[key]) + total, 0)
+};
+
+
+
+const type = typeof value
+
+const sizeOf = value => typeSizes[type](value)
+console.log(sizeOf(value))
+
+return 
 
 /*
  * Complete the contacts function below.

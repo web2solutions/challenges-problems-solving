@@ -1,4 +1,4 @@
-
+// https://www.hackerrank.com/challenges/balanced-brackets/problem
 
 function isBalanced(str) {
   const allBrackets = []

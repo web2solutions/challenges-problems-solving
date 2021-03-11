@@ -1,3 +1,48 @@
+/**
+ Hackerrank certification question
+
+ An anagram of a string is another string with the same characters in the same frequency, in any order. For example ‘abc’, ‘acb’,‘bca’,‘cab’,‘cba’,‘bac’ all are anagrams of ‘abc’.Given two arrays of strings, for every string in one list, determine how many anagrams of it are in the other list.
+Write a function that receives dictionary and query, two string arrays. It should return an array of integers where each element 'i’contains the number of anagrams of query[i] that exist in dictionary.
+
+Example
+
+dictionary = [‘hack’, ‘a’, ‘rank’,‘khac’,‘ackh’, ‘kran’,‘rankhacker’, ‘a’, ‘ab’, ‘bo’, ‘stairs’, ‘raits’]
+
+query = [“a”, “nark”, “bs”, “hack”, “stair”)
+
+query[0] =“a” has 2 anagrams in dictionary: ‘a’ and ‘a’.
+
+query[1]= “nark” has 2 anagrams in dictionary: ‘rank’ and ‘kran’.
+
+query[2] = “bs” has 0 anagrams in dictionary
+
+query[3] = “hack” has 3 anagrams in dictionary. ‘hack’, ‘khac’ and ‘ackh’.
+
+query[4] = “stair” has 1 anagram in dictionary: ‘raits’
+
+While the characters are the same in stairs, the frequency of 's’differs, so it is not an anagram.
+
+The final answer is [2, 2, 0, 3, 1].
+
+stringAnagram has the following parameters:
+
+string dictionary[n]: an array of strings to search
+
+in
+string query[q]: an array of strings to search for
+
+Returns
+
+int[q]: an array of integers where the value is the answer to query[i].
+
+Constraints
+
+• 1<= length(dictionary), length(query) <= 10^5
+
+• Every string consists of lowercase English letters.
+ */
+
+
 var Benchmark = require('benchmark')
 var suite = new Benchmark.Suite('Couting words')
 const chalk = require('chalk')
@@ -15,6 +60,7 @@ for (let x = 0; x <= total; x++) {
 
 console.log('------ starting perf')
 
+// working
 function stringAnagram(dictionary, query) {
     let totalOcurs = []
     const dictAnag = dictionary.map(w => (w.split("").sort().join("")))
@@ -48,11 +94,11 @@ console.log(stringAnagram(['hack', 'a', 'rank', 'khac', 'ackh', 'kran', 'rankhac
 
 
 function countSentences(wordSet, sentences) {
-    console.log(wordSet, sentences)
+    // console.log(wordSet, sentences)
     let ocur = []
     for(let x = 0; x < sentences.length; x++){
         const sentence = sentences[x]
-        console.log('sentence 1')
+        // console.log('sentence 1')
         const seqAnan = sentence.split(" ").map(words => {
             return words.split("").sort().reverse().join("")
         }).join(" ")
@@ -61,14 +107,17 @@ function countSentences(wordSet, sentences) {
             const word = wordSet[y]
             const anag = word.split("").sort().reverse().join("")
             //console.log(word.split("").sort().reverse().join(""), anag)
-            console.log(seqAnan.split(anag).length -1)
+            // console.log(seqAnan.split(anag).length -1)
             oc = oc + seqAnan.split(anag).length -1
         }
         ocur.push(oc)
     }
     return ocur
 }
-console.log(countSentences([ 'the', 'bats', 'tabs', 'in', 'cat', 'act' ], [ 'cat the bats', 'in the act', 'act tabs in' ]))
+console.log(countSentences(
+  ['hack', 'a', 'rank', 'khac', 'ackh', 'kran', 'rankhacker', 'a', 'ab', 'ba', 'stairs', 'raits'],
+  ["a", "nark", "bs", "hack", "stair"]
+))
 
 
 return

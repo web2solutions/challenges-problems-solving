@@ -9,7 +9,7 @@ let inputString = '';
 
 const value = ''
 
-console.log(JSON.stringify(value).length)
+/* console.log(JSON.stringify(value).length)
 
 
 const typeSizes = {
@@ -29,71 +29,125 @@ const type = typeof value
 const sizeOf = value => typeSizes[type](value)
 console.log(sizeOf(value))
 
-return 
+return */
 
 /*
  * Complete the contacts function below.
  */
 
+function Node(data) {
+  this.data = data
+  this.isEndOfWord = false
+  this.children = {}
+}
 
-function contacts(queries) {
+function Trie() {
+  this.root = new Node()
+}
 
-  let allContacts = " "
-  // consolelog(queries)
-  const results = []
+Trie.prototype.search = function () {
+  
+}
 
-  for (let x = 0; x < queries.length; x++) {
-      const command = ''+queries[x][0]
-      const value = ''+queries[x][1]
+Trie.prototype.insert = function (word) {
+  let node = this.root
+  for (let char of word) {
+    if (node[char] == null) {
+      node[char] = {}
+    }
+    node = node[char]
+  }
+  node.isEndOfWord = true
+}
 
-    if (command === 'add') {
-        allContacts = allContacts + " " + value
-    } else if (command === 'find') {
-      let result = 0
-      if (value.length === 1) {
-        result = allContacts.match(new RegExp("\\b(" + value + "+)", 'g')) || []
-      }
-      else {
-        result = allContacts.match(new RegExp("\\b(" + value + "+)", 'g')) || []
-      }
-      console.log(result)
-      // console.log(allContacts.match(new RegExp("(" + value + "+)", 'g')))
-      
-      if (x > 500) {
-        // console.log('find where', allContacts)
-        console.log('find what', value)
-        console.log(value, result.length)
-      }
-      
-      // let found = allContacts.split(new RegExp(`${value}`)).length -1
-      results.push(result.length)
+const cache = new Map()
+let allContacts = " "
+
+function setCache(key, value) {
+  // console.log(`>>> set cache ${key}: ${value}`)
+  cache.set(key, value)
+}
+
+function getCache(key) {
+  let value = null
+  if (cache.get(key)) {
+    return cache.get(key)
+  }
+  for (var k of cache.keys()) {
+    // console.log(k)
+    if (k.indexOf(key) === 0) {
+      value = cache.get(k)
+      break
     }
   }
-  results.forEach((r, i) => {
-    console.log(`${i+1} -> ${r}`)
-  })
-  // consolelog('results', results)
+  return value
+}
+
+function add(value) {
+  allContacts = allContacts + " " + value
+}
+
+function search(value) {
+  if (allContacts === ' ') {
+    return 0
+  }
+  
+  let sum = getCache(value)
+  if (sum === null) {
+    // there is no cache
+    if (value.length === 1) {
+      sum = (allContacts.match(new RegExp("\\b"+value+"(\\w*)?", 'g')) || []).length
+    } else {
+      sum = allContacts.split(` ${value}`).length -1
+    }
+    //set cache
+    setCache(value, sum)
+  }
+  return sum
+}
+
+function contacts(queries) {
+  let results = []
+  for (let x = 0; x < queries.length; x++) {
+    const command = '' + queries[x][0]
+    const value = '' + queries[x][1]
+    if (command === 'add') {
+      add(value)
+    } else if (command === 'find') {
+      // console.log('find', value)
+      let sum = search(value)
+      results.push(sum)
+      console.log(sum)
+    }
+  }
+  console.log(allContacts)
+  // console.log('cache', cache)
   return results
 }
 
 
-let reader = fs.createReadStream('input03.txt');
-const writer = fs.createWriteStream('output03.txt');
-writer.on('data', function (chunk) { 
-  console.log('writer', chunk.toString())
-});
-reader.on('data', function (chunk) { 
+
+//////   
+
+/**
+ * nui1
+ * nui2
+ * nui
+// se chave do map comecar com value procurado
+//    se o valor procurado.lenght < que chave do Map atual.length 
+//        entao soma é igual a soma de todos os values de todas as chaves que comecam com o valor procurado
+*/
+
+
+let reader = fs.createReadStream('input02.txt');
+reader.on('data', function (chunk) {
   inputString += chunk.toString()
 });
 reader.on("end", () => {
   inputString = inputString.trim().split('\n').map(str => str.trim().split(" "))
   inputString.shift()
-  
-  const result = contacts(inputString)
-  // console.log(result)
-  
-  writer.write(result.join("\n") + "\n");
 
-  writer.end();
+  const result = contacts(inputString)
+
   process.exit(0)
 });

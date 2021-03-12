@@ -2,11 +2,13 @@
 
 function isBalanced(str) {
   const allBrackets = []
+  
   const map = {
     '{': '}',
     '(': ')',
     '[': ']',
   }
+
   str = str.replace(new RegExp('[0-9]', 'g'), '')
   str = str.replace(new RegExp('[a-z A-Z]', 'g'), '')
   for (let x = 0; x < str.length; x++) {
@@ -28,7 +30,6 @@ function isBalanced(str) {
 
   return 'YES'
 }
-
 
 console.log(isBalanced('f(e(d))'))
 

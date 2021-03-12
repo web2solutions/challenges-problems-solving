@@ -1,3 +1,4 @@
+// Hackerrank test
 
 function maxCost (cost, labels, dailyCount) {
   const dailyGoalBuild = 3

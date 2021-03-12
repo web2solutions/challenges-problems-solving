@@ -4,7 +4,7 @@ const chalk = require('chalk')
 
 console.log('------ prepare data')
 
-const STR = '200 100 180 90 95 10'
+const STR = '1 2 5 3 6 4'
 
 
 class Node {
@@ -27,14 +27,14 @@ class BinarySearchTree {
       let current = this.root
 
       while (true) {
-        if (val > current.val) {
+        if (val < current.val) {
           if (current.left) {
             current = current.left
           } else {
             current.left = new Node(val)
             // break
           }
-        } else if (val < current.val) {
+        } else if (val > current.val) {
           if (current.right) {
             current = current.right
           } else {
@@ -104,7 +104,7 @@ const order = []
 const tree = new BinarySearchTree()
 
 STR.split(' ').forEach(n => tree.insert(n))
-console.debug(JSON.stringify(tree))
+console.log(tree)
 const root = tree.root
 console.log(levelOrder(root))
 

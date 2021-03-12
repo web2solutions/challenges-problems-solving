@@ -119,8 +119,8 @@ console.log(inputArr);
 
 #### Heapsort
 
-Heap Sort is a comparison-based sorting technique that sorts elements using Almost Complete Binary Tree.
-Heap Sort is considered better than quicksort in worst case as its time complexity is O(nlogn) which is better than O(n²) of quicksort. You may ask what is an almost complete binary tree on which heap sort is performed. Let us understand that first.
+Heap Sort is a comparison-based sorting technique that sorts elements using ~ Almost Complete Binary Tree. ~
+Heap Sort is considered better than quicksort in worst case as its time complexity is O(nlogn) which is better than O(n²) of quicksort.
 
 Max heap for increasing order
 

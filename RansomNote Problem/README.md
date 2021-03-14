@@ -80,7 +80,7 @@ The time to access all nodes, suposedly is O(n). But it seems this is not what h
 
 Then I decided to go over a benchmark testing 3 implementations:
 
-1. Hash
+1. Hash - Javascript associative arrays
 2. [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 3. [Trie](https://en.wikipedia.org/wiki/Trie)
 
@@ -101,33 +101,34 @@ Results:
 
 <img align="center" src="https://i.imgur.com/FeDhJTc.png" />
 
-See 
 
-Then I started.
+Yes, by the first test case, MAP/Hash is +-4x faster than a Trie.
+
+This is the winner solution:
 
 ```javascript
     function canNoteBeBuilt(note, magazine) {
-      let dictA = magazine.split('')
-      let notes = note.split('')
+      let dictA = magazine.split(' ') // split magazine into words
+      let notes = note.split(' ')
       let dict = new Map()
       for (let index = 0; index < dictA.length; index++) {
-        let letter = dictA[index].toLowerCase()
-        let sum = dict.get(letter)
+        let keyName = dictA[index].toLowerCase()
+        let sum = dict.get(keyName)
         if(sum)
-          dict.set(letter, sum + 1)
+          dict.set(keyName, sum + 1)
         else
-          dict.set(letter, 1)
+          dict.set(keyName, 1)
       }
       let isok = true
       for (let index = 0; index < notes.length; index++) {
-        const letter = notes[index].toLowerCase();
-        let sum = dict.get(letter)
+        const note = notes[index].toLowerCase();
+        let sum = dict.get(note)
         if (typeof sum !== 'undefined') {
-          if (dict.get(letter) < 1) {
+          if (dict.get(note) < 1) {
             isok = false
             break
           }
-          dict.set(letter, sum - 1)
+          dict.set(note, sum - 1)
           isok = true
         } else {
           isok = false
@@ -138,3 +139,5 @@ Then I started.
     }
     canNoteBeBuilt(note, magazine)
 ```
+
+But the provided solution does not solves 100% of our problem. It is breaking down magazine into words and if we try to build ransom notes that are partial, in other words, if we try to build `bom` with the given `bombom`, the algorithm will not work, or, it will requires changes that will reflect into algorithm time complexity because.

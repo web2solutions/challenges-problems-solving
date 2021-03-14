@@ -180,7 +180,7 @@ This is the winner solution:
 
 It's  time complexity is O(n*n) quadratic, because dictA[index] inside the first for is O(n) in it worst case. The Map's get and set also is therorically O(n), even executing faster that Javascript object's access.
 
-But the provided solution does not solves 100% of our problem (except the Trie). Also, it could be improved. It is breaking down magazine into words and if we try to build ransom notes that are partial, in other words, if we try to build `bom` with the given `bombom`, the algorithm will not work, or, it will requires changes that will reflect into algorithm an probably on it time complexity.
+But the provided solution does not solves 100% of our problem. Also, it could be improved. It is breaking down magazine into words and if we try to build ransom notes that are partial, in other words, if we try to build `bom` with the given `bombom`, the algorithm will not work, or, it will requires changes that will reflect into algorithm an probably on it time complexity.
 
 
 
@@ -190,7 +190,7 @@ For now, I'm going to implement the hability to build `partial ransom notes`, li
 
 The main difference from previous Map implementation is that, rather than breaking the magazine into words, it will be brake into letters, meaning now you have a fixed size Map as store, reducing the time complexity from O(n*n) to O(n*1), because the time to access the Map store is constant.
 
-There is no changes in Trie implementation because it already provides `partial ransom note` building.
+In the Trie implementation, we also are now counting letters rather than counting words. But there is no changes in it time complexity.
 
 As input we have the following magazine and ransom note:
 

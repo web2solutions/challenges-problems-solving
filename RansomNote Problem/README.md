@@ -170,5 +170,13 @@ Results:
 
 <img align="center" src="https://i.imgur.com/JQe0EZ0.png" />
 
-LOL, the Map/Hash implementation stills rocking. But the time difference  exponentially reduced.
+LOL, the Map/Hash implementation stills rocking. But the time difference reduced by up to 3x with same magazine and ransom note.
+
+What is happening ?
+
+In order to get closest of real world, we have a counter implemented to it item of the Magazine store. Because the magazine `bombom` just can produces `bombom` or `bom` and `bom` possibilities. Trying to produce `bom` 3 times must fails.
+
+In the previous Map implementation, we stored words as key, and every time you try to build `bombom`, it goes over the key `bombom`.
+
+In this actual implementation, we stored letters as keys, and every time you try to build `bombom`, it goes over the keys `b`, `o` and `m`.
 

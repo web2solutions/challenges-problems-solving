@@ -69,7 +69,9 @@ In that time, I believed that I have achivied the desired goal of that test.
 
 But I was not satisfied with the fact that all my initial approaches were rejected.
 
-When I heard `hash`, it got more confuse yet, because I was very aware about the fact that Javascript Object (Hash) are slower than Javascript Map. The time to access all nodes is f(n), and it could be decreased up to f(n * x), where x is the difference between Hash key access and Map key access.
+When I heard `hash`, it got more confuse yet, because I was very aware about the fact that Javascript Object (Hash) are slower than Javascript Map. 
+
+The time to access all nodes, suposedly is O(n). But it seems this is not what happens on Javascript hash objects, it could be decreased up to O(n * x), where x is the difference between Hash key access and Map key access. By simply replacing `{}` by `Map`. Javascript hash objects works similar to arrays, being associative arrays, having text indexes insted integers. It is more or less a [Set](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set) implementation. `More or  less` because in fact it is not a [Set](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set). 
 
 
 
@@ -79,10 +81,14 @@ When I heard `hash`, it got more confuse yet, because I was very aware about the
 Then I decided to go over a benchmark testing 3 implementations:
 
 1. Hash
-2. Map
-3. Trie
+2. [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+3. [Trie](https://en.wikipedia.org/wiki/Trie)
 
-With the following magazine and ransom note:
+On both `Hash` and `Map`, the magazine has all it `words` cutted out and saved as key. This approach does not satisfy the above mentioned `bombom` and `bom` case. They have O(n) time complexity
+
+For the `Trie`, we have a O(log n) implementation.
+
+As input we have the following magazine and ransom note:
 
 ```javascript
 const magazine = 'Tomorrow a lot of coffee candies will be bought Do you like to drink coffee'

@@ -1,0 +1,15 @@
+{
+  "name": "ransomnote-problem",
+  "version": "1.0.0",
+  "description": "First at all I would like to make one thing clear: I'm a brazilian developer and I learnt english by listen to musics, reading technology manuals and attending to work meetings on daily basis for the last 10 years.",
+  "main": "bench.hash.map.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "chalk": "^4.1.0"
+  }
+}

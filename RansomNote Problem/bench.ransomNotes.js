@@ -96,6 +96,11 @@ console.log('---rasom notes letters:', note.split('').length)
 
 console.log('------ starting perf')
 
+let trie = new Trie()
+trie.insert('bombom')
+console.log(JSON.stringify(trie))
+return
+
 // add tests
 suite
   .add('Map implementation', function () {

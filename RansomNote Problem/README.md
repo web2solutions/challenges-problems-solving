@@ -41,15 +41,51 @@ When I hanged out the call, I started researching about the most "precise meanin
 
 > In typography, the ransom note effect is the result of using an excessive number of juxtaposed typefaces. It takes its name from the appearance of a stereotypical ransom note, with the message formed from `words or letters` cut randomly from a magazine or newspaper in order to avoid using recognizable handwriting. 
 
-Also looking to examples 
-
-After this, I assumed that a hash implementation, in a best case, would have something like 26 nodes (each node is a letter of alphabet), not considering numbers. Yes, it sounded reasonable. To break down all the words from the magazine into separated `stack of equal letters`. Once it is a hash, and the letter is it key, we can associate a counter to it. It means, the portuguese word [bombom](https://pt.wikipedia.org/wiki/Bombom), would result in the following magazine hash:
+After this, I assumed that a hash implementation, in a best case, would have something like 26 pair/value sets (each set is a letter of alphabet), not considering numbers. Yes, it sounded reasonable: to break down all the words from the magazine into separated `stack of equal letters`. Once it is a hash, and the letter is it key, we can associate a counter to it. It means, the portuguese word [bombom](https://pt.wikipedia.org/wiki/Bombom), would result in the following magazine hash:
 
 ```javascript
 let managazineHash = {
   b: 2,
   o: 2,
   m:, 2
+}
+```
+
+The Trie implementation would looks like the following:
+
+```javascript
+"root": {
+    "b": {
+      "value": "b",
+      "isLastChar": false,
+      "letterCount": 1,
+      "o": {
+        "value": "o",
+        "isLastChar": false,
+        "letterCount": 1,
+        "m": {
+          "value": "m",
+          "isLastChar": false,
+          "letterCount": 1,
+          "b": {
+            "value": "b",
+            "isLastChar": false,
+            "letterCount": 1,
+            "o": {
+              "value": "o",
+              "isLastChar": false,
+              "letterCount": 1,
+              "m": {
+                "value": "m",
+                "isLastChar": true,
+                "letterCount": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 

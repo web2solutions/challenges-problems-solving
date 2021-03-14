@@ -73,14 +73,14 @@ When I heard `hash`, it got more confuse yet, because I was very aware about the
 
 
 
-<img align="center" src="https://i.imgur.com/c8J3o11.png" />
+<img align="center" src="https://i.imgur.com/WesNwsg.png" />
 
 
 Then I decided to go over a benchmark testing 3 implementations:
 
-1 - Hash
-2 - Map
-3 - Trie
+1. Hash
+2. Map
+3. Trie
 
 With the following magazine and ransom note:
 

@@ -114,7 +114,7 @@ The time to access all nodes, suposedly is O(n). But it seems this is not what h
 <img align="center" src="https://i.imgur.com/WesNwsg.png" />
 
 
-Notes:
+**Notes:**
 
 The computer used to run the benchmarks is a Mac min i5, 32GB RAM (for sure there is no 32GB ram avaiable).
 Node version: v10.22.0

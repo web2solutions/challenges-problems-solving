@@ -71,7 +71,7 @@ But I was not satisfied with the fact that all my initial approaches were reject
 
 When I heard `hash`, it got more confuse yet, because I was very aware about the fact that Javascript Object (Hash) are slower than Javascript Map. 
 
-The time to access all nodes, suposedly is O(n). But it seems this is not what happens on Javascript hash objects, it could be decreased up to O(n * t), where t is the time difference between Hash key access and Map key access. By simply replacing `{}` by `Map`. Javascript hash objects works similar to arrays, being associative arrays, having text indexes insted integers. It is more or less a [Set](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set) implementation. `More or  less` because in fact it is not a [Set](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set). 
+The time to access all nodes, suposedly is O(n). But it seems this is not what happens on Javascript hash objects, it could be decreased up to O(n * t), where t is the time difference between associative array key access and Map key access. By simply replacing `{}` by `Map`. Javascript hash objects works similar to arrays, being associative arrays, having text indexes insted integers. 
 
 
 

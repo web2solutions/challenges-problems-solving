@@ -199,7 +199,7 @@ suite
         return "the same";
       return (b / a * 100).toFixed() + '% slower';
     }
-    console.log(chalk.blue(`${this[1].name} is ${compare(fastest.map('hz'), this[0].hz)} than ${this[0].name}`));
+    console.log(chalk.blue(`${this[0].name} is ${compare(fastest.map('hz'), this[1].hz)} than ${this[1].name}`));
   })
   // run async
   .run({ async: true })

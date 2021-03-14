@@ -218,14 +218,18 @@ suite
   })
   .on('complete', function () {
     // console.log(this.filter('fastest'))
-    console.log(chalk.green('Fastest is ' + this.filter('fastest').map('name')))
+    const fastest = this.filter('fastest')
+    console.log(chalk.green('Fastest is ' + fastest.map('name')))
+
     function compare(a, b) {
       if (a > b)
-        return ( a / b * 100).toFixed() + '% faster';
+        return (a / b * 100).toFixed() + '% faster';
       if (a == b)
         return "the same";
-      return ( b / a * 100).toFixed() + '% slower';
+      return (b / a * 100).toFixed() + '% slower';
     }
+    console.log(chalk.blue(`${this[0].name} is ${compare(fastest.map('hz'), this[1].hz)} than ${this[1].name}`));
+    console.log(chalk.blue(`${this[0].name} is ${compare(fastest.map('hz'), this[2].hz)} than ${this[2].name}`));
   })
   // run async
   .run({ async: true })

@@ -101,7 +101,7 @@ const note = 'Drink coffee coffee'
 
 Results:
 
-<img align="center" src="https://i.imgur.com/FeDhJTc.png" />
+<img align="center" src="https://i.imgur.com/kX1bc6a.png" />
 
 
 Yes, by the first test case, MAP/Hash is +-4x faster than a Trie.
@@ -168,7 +168,7 @@ const note = 'Drink coffee coffee'
 
 Results:
 
-<img align="center" src="https://i.imgur.com/kfDEGIC.png" />
+<img align="center" src="https://i.imgur.com/JQe0EZ0.png" />
 
 LOL, the Map/Hash implementation stills rocking. But the time difference  exponentially reduced.
 

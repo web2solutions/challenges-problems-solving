@@ -114,6 +114,11 @@ The time to access all nodes, suposedly is O(n). But it seems this is not what h
 <img align="center" src="https://i.imgur.com/WesNwsg.png" />
 
 
+Notes:
+
+The computer used to run the benchmarks is a Mac min i5, 32GB RAM (for sure there is no 32GB ram avaiable).
+Node version: v10.22.0
+
 ### Benchmarking #1
 
 Then I decided to go over a benchmark testing 3 implementations:
@@ -210,7 +215,7 @@ LOL, the Map/Hash implementation stills rocking. But the time difference reduced
 
 What is happening ?
 
-In order to get closest of real world, we have a counter implemented to it item of the Magazine store. Because the magazine `bombom` just can produces `bombom` or `bom` and `bom` possibilities. Trying to produce `bom` 3 times must fails.
+In order to get closest of real world, we have a counter associated to each item of the Magazine store. Because the magazine `bombom` just can produces `bombom` or `bom` and `bom` possibilities. Trying to produce `bom` 3 times must fails.
 
 In the previous Map implementation, we stored words as key, and every time you try to build `bombom`, it goes over the key `bombom`.
 

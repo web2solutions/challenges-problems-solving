@@ -41,18 +41,18 @@ The time efficiency of selection sort is quadratic, so there are a number of sor
 function selectionSort(inputArr) { 
     let n = inputArr.length;
         
-    for(let i = 0; i < n; i++) {
+    for(let index = 0; index < n; index++) {
         // Finding the smallest number in the subarray
-        let min = i;
-        for(let j = i+1; j < n; j++){
+        let min = index;
+        for(let j = index+1; j < n; j++){
             if(inputArr[j] < inputArr[min]) {
                 min=j; 
             }
          }
-         if (min != i) {
+         if (min != index) {
              // Swapping the elements
-             let tmp = inputArr[i]; 
-             inputArr[i] = inputArr[min];
+             let tmp = inputArr[index]; 
+             inputArr[index] = inputArr[min];
              inputArr[min] = tmp;      
         }
     }
@@ -88,19 +88,19 @@ When people manually sort cards in a bridge hand, most use a method that is simi
 
 ```javascript
 function insertionSort(inputArr) {
-    let n = inputArr.length;
-        for (let i = 1; i < n; i++) {
-            // Choosing the first element in our unsorted subarray
-            let current = inputArr[i];
-            // The last element of our sorted subarray
-            let j = i-1; 
-            while ((j > -1) && (current < inputArr[j])) {
-                inputArr[j+1] = inputArr[j];
-                j--;
-            }
-            inputArr[j+1] = current;
-        }
-    return inputArr;
+  let n = inputArr.length;
+  for (let index = 1; index < n; index++) {
+    // Choosing the first element in our unsorted subarray
+    let current = inputArr[index];
+    // The last element of our sorted subarray
+    let j = index-1; 
+    while ((j > -1) && (current < inputArr[j])) {
+      inputArr[j+1] = inputArr[j];
+      j--;
+    }
+    inputArr[j+1] = current;
+  }
+  return inputArr;
 }
 let inputArr = [5, 2, 4, 6, 1, 3];
 insertionSort(inputArr);
@@ -119,7 +119,7 @@ console.log(inputArr);
 
 #### Heapsort
 
-Heap Sort is a comparison-based sorting technique that sorts elements using ~ Almost Complete Binary Tree. ~
+Heap Sort is a comparison-based sorting technique that sorts elements using Almost Complete Binary Tree.
 Heap Sort is considered better than quicksort in worst case as its time complexity is O(nlogn) which is better than O(n²) of quicksort.
 
 Max heap for increasing order

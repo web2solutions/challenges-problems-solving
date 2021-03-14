@@ -78,6 +78,8 @@ The time to access all nodes, suposedly is O(n). But it seems this is not what h
 <img align="center" src="https://i.imgur.com/WesNwsg.png" />
 
 
+### Benchmarking #1
+
 Then I decided to go over a benchmark testing 3 implementations:
 
 1. Hash - Javascript associative arrays
@@ -109,19 +111,19 @@ This is the winner solution:
 ```javascript
     function canNoteBeBuilt(note, magazine) {
       let dictA = magazine.split(' ') // split magazine into words
-      let notes = note.split(' ')
-      let dict = new Map()
-      for (let index = 0; index < dictA.length; index++) {
-        let keyName = dictA[index].toLowerCase()
-        let sum = dict.get(keyName)
+      let notes = note.split(' ') //
+      let dict = new Map() 
+      for (let index = 0; index < dictA.length; index++) { // O(n)
+        let keyName = dictA[index].toLowerCase() //  O(n)
+        let sum = dict.get(keyName) //  O(1)
         if(sum)
-          dict.set(keyName, sum + 1)
+          dict.set(keyName, sum + 1) //  O(1)
         else
-          dict.set(keyName, 1)
+          dict.set(keyName, 1) //  O(1)
       }
       let isok = true
-      for (let index = 0; index < notes.length; index++) {
-        const note = notes[index].toLowerCase();
+      for (let index = 0; index < notes.length; index++) { // O(n)
+        const note = notes[index].toLowerCase(); //  O(n)
         let sum = dict.get(note)
         if (typeof sum !== 'undefined') {
           if (dict.get(note) < 1) {
@@ -140,4 +142,33 @@ This is the winner solution:
     canNoteBeBuilt(note, magazine)
 ```
 
-But the provided solution does not solves 100% of our problem. It is breaking down magazine into words and if we try to build ransom notes that are partial, in other words, if we try to build `bom` with the given `bombom`, the algorithm will not work, or, it will requires changes that will reflect into algorithm time complexity because.
+It's  time complexity is O(n*n) quadratic, because dictA[index] inside the first for is O(n) in it worst case. The Map's get and set also is therorically O(n), even executing faster that Javascript object's access.
+
+But the provided solution does not solves 100% of our problem (except the Trie). Also, it could be improved. It is breaking down magazine into words and if we try to build ransom notes that are partial, in other words, if we try to build `bom` with the given `bombom`, the algorithm will not work, or, it will requires changes that will reflect into algorithm an probably on it time complexity.
+
+
+
+### Benchmarking #2
+
+For now, I'm going to implement the hability to build `partial ransom notes`, like the already mentioned `bombom` case.
+
+The main difference from previous Map implementation is that, rather than breaking the magazine into words, it will be brake into letters, meaning now you have a fixed size Map as store, reducing the time complexity from O(n*n) to O(n*1), because the time to access the Map store is constant.
+
+There is no changes in Trie implementation because it already provides `partial ransom note` building.
+
+As input we have the following magazine and ransom note:
+
+```javascript
+const magazine = 'Tomorrow a lot of coffee candies will be bought Do you like to drink coffee'
+const note = 'Drink coffee coffee'
+```
+
+[check bench.ransomNotes.2.js](./bench.ransomNotes.2.js)
+
+
+Results:
+
+<img align="center" src="https://i.imgur.com/kfDEGIC.png" />
+
+LOL, the Map/Hash implementation stills rocking. But the time difference  exponentially reduced.
+

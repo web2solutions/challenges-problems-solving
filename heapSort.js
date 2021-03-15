@@ -1,4 +1,5 @@
-function heapSort(arr){
+let swaps = 0
+function heapSort(arr) {
   let m = arr.length;
   for(let index = Math.floor(m/2) - 1 ; index >= 0; index--){
       max_heapify(arr,index,m);            //Building max heap
@@ -34,14 +35,22 @@ function max_heapify(arr,index,m){
   }
   return;
 }
-
-function swap(arr,index,index2){                 //Swap function
+let last = null
+function swap(arr, index, index2) {                 //Swap function
   let temp;
+  //if (last !== arr[index2]) {
+    
+  //}
+  last = arr[index2]
   temp = arr[index];
   arr[index] = arr[index2];
-  arr[index2]=temp;
+  arr[index2] = temp;
+  
 }
 
-let arr = [6, 5, 7, 3, 1, 8, 7, 2, 4]
+let arr = [7, 2, 3]
+// 2, 7, 3, 3
+// 2, 3, 7, 3
+// 2, 3, 3, 7
 ar = heapSort(arr);
-console.log(ar);
+console.log(ar, swaps);

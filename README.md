@@ -112,7 +112,7 @@ function linearSearch2(arr, x) {
     right -=1
   }
   return -1
-  }
+}
 linearSearch2(arr, x)
 ```
 

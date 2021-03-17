@@ -18,12 +18,12 @@ Em alguns casos, o próprio enumerado do problema já esconde algum tipo de `peg
 
 ## Estrutura de dados
 
-- string
-- array
-- linked List
-- tries
-- hashmap / hashtable
-- binary tree
+1. String
+2. Array
+3. Linked List
+4. tries
+5. hashmap / hashtable
+6. binary tree
   - starts on 1 ends in m
   - the root is the indice 1
   - the parent of any indice is Math.floor(indice / 2). The indice one does not have parent

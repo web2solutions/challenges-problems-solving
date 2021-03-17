@@ -66,6 +66,8 @@ Time: O(n)
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
+<br><br>
+
 ##### Linear search `worst case` ->  **desired number in the end of array**
 
 Used When desired number is in the enf of the given array

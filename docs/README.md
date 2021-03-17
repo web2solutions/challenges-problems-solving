@@ -1,9 +1,22 @@
-# Challengs and problems solving
+# Solucionando desafios e problemas com algorítimos.
 
-This repo is just about some performance benchmarks, challenges and problem solving  using Javascript
+**Guia básico de `Estrutura de Dados` para desenvolvedores de lingua portuguesa.**
+
+O mercado nunca esteve tão bom para desenvolvedores front end, back end, full stack e engenheiros de sofwares.
+
+A maioria dos testes técnicos aplicados em plataformas como `Hacker Rank` e `Code Signal`, são `gamificados`. Eles simulam problemas hipotéticos do dia á dia para serem solucionados através de algorítimos.
+
+Em alguns casos, o próprio enumerado do problema já esconde algum tipo de `pegadinha`para te fazer perder o foco no que mais importa nesse `jogo`;
+
+1. `Entender do que se trata o problema.`
+2. `Entender qual tipo de Estrutura de Dados o problema está lidando.`
+3. `Entender como os dados estão organizados.`
+4. `Entender qual o volume de dados em que o problema está lidando.`
 
 
-## Data structures
+
+
+## Estrutura de dados
 
 - string
 - array

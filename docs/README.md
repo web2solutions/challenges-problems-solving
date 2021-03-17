@@ -91,33 +91,14 @@ Go to next left and right numbers until you find `x` OR ( left <= right === true
 
 0 <= left <= right (n-1)
 
-```javascript
-const arr = []
-const x = 99999
-const total = 100000 // 100k
-for (let i = 0; i <= total; i++) {
-  arr.push(i)
-}
+<p class="codepen" data-height="633" data-theme-id="dark" data-default-tab="js" data-user="web2solutions" data-slug-hash="dyOEYXb" style="height: 633px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="dyOEYXb">
+  <span>See the Pen <a href="https://codepen.io/web2solutions/pen/dyOEYXb">
+  dyOEYXb</a> by Eduardo Almeida (<a href="https://codepen.io/web2solutions">@web2solutions</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-function linearSearch2(arr, x) {
-  let n = arr.length
-  if(n === 0) return -1
-  let left = 0
-  let right = n - 1
-  while (left <= right) {
-    // check if left pointer is pointing to desired value and return it
-    if(arr[left] === x) return left 
-    // check if right pointer is pointing to desired value and return it
-    if(arr[right] === x) return right 
-    // move left pointer to right direction
-    left += 1 
-    // move right pointer to left direction
-    right -=1 
-  }
-  return -1
-}
-linearSearch2(arr, x)
-```
+<br><br>
 
 #### Binary Search
 

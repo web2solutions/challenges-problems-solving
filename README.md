@@ -110,10 +110,14 @@ function linearSearch2(arr, x) {
   let left = 0
   let right = n - 1
   while (left <= right) {
-    if(arr[left] === x) return left
-    if(arr[right] === x) return right
-    left += 1 // move left to right
-    right -=1 // move right to left
+    // check if left pointer is pointing to desired value and return it
+    if(arr[left] === x) return left 
+    // check if right pointer is pointing to desired value and return it
+    if(arr[right] === x) return right 
+    // move left pointer to right direction
+    left += 1 
+    // move right pointer to left direction
+    right -=1 
   }
   return -1
 }

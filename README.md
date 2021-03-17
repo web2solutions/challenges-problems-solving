@@ -25,21 +25,22 @@ This repo is just about some performance benchmarks, challenges and problem solv
 
 ### Search Strategies
 
-`Scenario 1: Best scenario`
+***`Scenario 1:`***
 
-sorted array with desired number at the begining of the array
+***Sorted*** array with desired number at the begining of the array
 
-`Scenario 2: Worst scenario`
+***`Scenario 2:`***
 
-sorted array with desired number at the end of the array
+***Sorted*** array with desired number at the end of the array
 
-`Scenario 3: `
+***`Scenario 3: `***
 
-unknow order arrar 
+***unknow order*** array
+
 ### Sorted arrays
 
 
-#### Linear Search
+#### Search type #1 -> Linear Search
 
 ##### Linear search `best case` O(n)
 
@@ -100,7 +101,7 @@ function linearSearch2(arr, x) {
 linearSearch2(arr, x)
 ```
 
-#### Binary Search
+#### Search type #2 -> Binary Search
 
 Description: `Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.`
 

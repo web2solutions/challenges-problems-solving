@@ -25,28 +25,45 @@ This repo is just about some performance benchmarks, challenges and problem solv
 
 ### Search Strategies
 
-`Scenario 1: `
+`Scenario 1: Best scenario`
 
 sorted array with desired number at the begining of the array
 
-`Scenario 2: `
+`Scenario 2: Worst scenario`
 
-sorted array witg desired number at the end of the array
+sorted array with desired number at the end of the array
 
 `Scenario 3: `
 
 unknow order arrar 
 #### Sorted arrays
 
-- Linear search #1 O(n)
+- Linear search `best case` O(n)
 
 Description: `Start on 0 index and make a comparison on each index until n.`
 
 Time: O(n)
 
-Worst case: when desired number is at end
+```javascript
+let total = 100000 // 100k
+const arr = []
+const x = 2
+for (let x = 0; x <= total; x++) {
+  arr.push(x)
+}
 
-- Linear search #2
+function linearSearch1(arr, x) {
+  let n = arr.length
+  if(n === 0) return -1
+  for (let index = 0; index < n; index++) {
+    if(arr[index] === x) return index
+  }
+  return -1 // not found
+}
+linearSearch1(arr, x)
+```
+
+- Linear search `worst case`
 
 Start on 0 index AND n-1 index (end)
 Make a comparison with both
@@ -54,6 +71,31 @@ Go to next left and right numbers until you find the number or left <= right
 Used When linear search #1 is on worst case
 if element Found at last  O(n) to O(1)
 if element Not found O(n) to O(n/2)
+
+
+```javascript
+let total = 100000 // 100k
+const arr = []
+const x = 99999
+for (let x = 0; x <= total; x++) {
+  arr.push(x)
+}
+
+function linearSearch2(arr, x) {
+  let n = arr.length
+  if(n === 0) return -1
+  let left = 0
+  let right = n - 1
+  while (left <= right) {
+    if(arr[left] === x) return left
+    if(arr[right] === x) return right
+    left += 1
+    right -=1
+  }
+  return -1
+  }
+linearSearch2(arr, x)
+```
 
 - Binary Search
 

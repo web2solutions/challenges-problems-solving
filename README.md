@@ -86,11 +86,15 @@ if element Not found O(n) to O(n/2)
 
 **Solution**
 
-Start on 0 index AND n-1 index (end)
+Use 2 index pointers: left and right
+
+Start on 0 index (left) AND n-1 index (right)
 
 Make a comparison with both
 
-Go to next left and right numbers until you find the number or left <= right
+Go to next left and right numbers until you find `x` OR ( left <= right === true)
+
+0 <= left <= right (n-1)
 
 ```javascript
 const arr = []
@@ -108,8 +112,8 @@ function linearSearch2(arr, x) {
   while (left <= right) {
     if(arr[left] === x) return left
     if(arr[right] === x) return right
-    left += 1
-    right -=1
+    left += 1 // move left to right
+    right -=1 // move right to left
   }
   return -1
 }

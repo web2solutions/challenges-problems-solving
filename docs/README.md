@@ -56,25 +56,12 @@ Description: `Start on 0 index and make a comparison on each index until n.`
 
 Time: O(n)
 
-```javascript
-const arr = []
-const x = 2
-const total = 100000 // 100k
-for (let i = 0; i <= total; i++) {
-  arr.push(i)
-}
-
-
-function linearSearch1(arr, x) {
-  let n = arr.length
-  if(n === 0) return -1
-  for (let index = 0; index < n; index++) {
-    if(arr[index] === x) return index
-  }
-  return -1 // not found
-}
-linearSearch1(arr, x)
-```
+<p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js" data-user="web2solutions" data-slug-hash="wvobaVo" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Busca linear - melhor cenário">
+  <span>See the Pen <a href="https://codepen.io/web2solutions/pen/wvobaVo">
+  Busca linear - melhor cenário</a> by Eduardo Almeida (<a href="https://codepen.io/web2solutions">@web2solutions</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ##### Linear search `worst case` ->  **desired number in the end of array**
 

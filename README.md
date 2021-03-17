@@ -79,7 +79,9 @@ linearSearch1(arr, x)
 ##### Linear search `worst case` ->  **desired number in the end of array**
 
 Used When linear search #1 is on worst case
+
 if element Found at last  O(n) to O(1)
+
 if element Not found O(n) to O(n/2)
 
 **Solution**

@@ -6,18 +6,18 @@ const chalk = require('chalk')
 /**
    Problem 
    
-   Given a magazine (collection of words) and a ransom note set, check if we can build a ransom note set using the words of magazine
-   This problem is assuming that to be an ransom note, it must be match a 100% equal word in the magazine. Example, if you are building the word coffee, the same word coffee must be present in tthe magazine, the word coffees in this case does not satisfy.
+   Given a magazine (collection of words) and a ransom note set, check if we can build a ransom note set using the letters of the magazine
+   This problem is assuming that to be an ransom note, All it letters must be found in the magazine. Example, if you are building the word coff, the coffee word in the magazine should satisfy this.
    
-   Example 1:
+  Example 1:
    magazine is : Tomorrow a lot of coffee candies will be bought Do you like to drink coffee
-   Ransom Note is: Drink coffee coffee
+   Ransom Note is: Drin coffe cof
         In this case your ransom notes can entirely be built using the magazine.
   
   Example 2:
    magazine is : Tomorrow a lot of coffee candies will be bought Do you like to drink coffee
-   Ransom Note is: Drink coffee coffee drink
-        In this case your ransom notes can not be built because there is no drink words in magazine
+   Ransom Note is: Drin Drin coffe cof
+        In this case your ransom notes can not be built because there is no 2 drink words in magazine
   
  */
 
@@ -26,12 +26,8 @@ const chalk = require('chalk')
  */
 console.log('------ prepare data')
 
-
-
-
-const magazine = 'Tomorrow a lot of coffee candies will be bought Do you like to drink coffee'
-const note = 'Drink coffee coffee'
-
+const magazine = 'Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee Tomorrow a lot of coffee candies will be bought Do you like to drink coffee '
+const note = 'Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee Drink coffee coffee '
 
 console.log('---magazine words:', magazine.split(' ').length)
 console.log('---magazine letters:', magazine.split('').length)
@@ -40,10 +36,6 @@ console.log('---rasom notes letters:', note.split('').length)
 
 console.log('------ starting perf')
 
-
-
-
-
 // add tests
 suite
   .add('Map implementation', function () {
@@ -51,17 +43,11 @@ suite
       let dict = new Map()
       let isok = true
       for (let letter of magazine) {
-        if (!letter.match(/[a-z]/i)) {
-          continue
-        }
         letter = letter.toLowerCase()
         let sum = dict.get(letter) || 0
         dict.set(letter, sum + 1)
       }
       for (let letter of note) {
-        if (!letter.match(/[a-z]/i)) {
-          continue
-        }
         letter = letter.toLowerCase()
         let sum = dict.get(letter)
         if (typeof sum !== 'undefined') {
@@ -87,17 +73,11 @@ suite
       let dict = {}
       let isok = true
       for (let letter of magazine) {
-        if (!letter.match(/[a-z]/i)) {
-          continue
-        }
         letter = letter.toLowerCase()
         let sum = dict[letter] || 0
         dict[letter] = sum + 1
       }
       for (let letter of note) {
-        if (!letter.match(/[a-z]/i)) {
-          continue
-        }
         letter = letter.toLowerCase()
         let sum = dict[letter]
         if (typeof sum !== 'undefined') {
@@ -138,143 +118,3 @@ suite
   })
   // run async
   .run({ async: true })
-
-
-
-  /* 
-  Trie tree 
-
-  {
-  "root": {
-    "isLastChar": false,
-    "wordCount": 0,
-    "t": {
-      "o": {
-        "m": {
-          "o": {
-            "r": {
-              "r": {
-                "o": {
-                  "w": {
-                    "wordCount": 1,
-                    "isLastChar": true
-                  }
-                }
-              }
-            }
-          }
-        },
-        "wordCount": 1,
-        "isLastChar": true
-      }
-    },
-    "a": {
-      "wordCount": 1,
-      "isLastChar": true
-    },
-    "l": {
-      "o": {
-        "t": {
-          "wordCount": 1,
-          "isLastChar": true
-        }
-      },
-      "i": {
-        "k": {
-          "e": {
-            "wordCount": 1,
-            "isLastChar": true
-          }
-        }
-      }
-    },
-    "o": {
-      "f": {
-        "wordCount": 1,
-        "isLastChar": true
-      }
-    },
-    "c": {
-      "o": {
-        "f": {
-          "f": {
-            "e": {
-              "e": {
-                "wordCount": 2,
-                "isLastChar": true
-              }
-            }
-          }
-        }
-      },
-      "a": {
-        "n": {
-          "d": {
-            "i": {
-              "e": {
-                "s": {
-                  "wordCount": 1,
-                  "isLastChar": true
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "w": {
-      "i": {
-        "l": {
-          "l": {
-            "wordCount": 1,
-            "isLastChar": true
-          }
-        }
-      }
-    },
-    "b": {
-      "e": {
-        "wordCount": 1,
-        "isLastChar": true
-      },
-      "o": {
-        "u": {
-          "g": {
-            "h": {
-              "t": {
-                "wordCount": 1,
-                "isLastChar": true
-              }
-            }
-          }
-        }
-      }
-    },
-    "d": {
-      "o": {
-        "wordCount": 1,
-        "isLastChar": true
-      },
-      "r": {
-        "i": {
-          "n": {
-            "k": {
-              "wordCount": 1,
-              "isLastChar": true
-            }
-          }
-        }
-      }
-    },
-    "y": {
-      "o": {
-        "u": {
-          "wordCount": 1,
-          "isLastChar": true
-        }
-      }
-    }
-  }
-}
-  
-  */

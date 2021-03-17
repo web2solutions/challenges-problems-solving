@@ -3,7 +3,7 @@
 This repo is just about some performance benchmarks, challenges and problem solving  using Javascript
 
 
-### Data structures
+## Data structures
 
 - string
 - array
@@ -19,6 +19,64 @@ This repo is just about some performance benchmarks, challenges and problem solv
   - the number of levels of a vector is 1 + lg(m), where lg(m)  -> floor(log m) -> Math.floor(Math.log(m))
 
 
+
+## Arrays
+
+
+### Searches Strategies
+
+`Scenario 1: `
+
+sorted array with desired number at the begining of the array
+
+`Scenario 2: `
+
+sorted array witg desired number at the end of the array
+
+`Scenario 3: `
+
+unknow order arrar 
+#### Sorted arrays
+
+- Linear search #1 O(n)
+
+Description: `Start on 0 index and make a comparison on each index until n.`
+
+Time: O(n)
+
+Worst case: when desired number is at end
+
+- Linear search #2
+
+Start on 0 index AND n-1 index (end)
+Make a comparison with both
+Go to next left and right numbers until you find the number or left <= right
+Used When linear search #1 is on worst case
+if element Found at last  O(n) to O(1)
+if element Not found O(n) to O(n/2)
+
+- Binary Search
+
+Description: `Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.`
+
+Time: O(Log n)
+
+
+
+### Sorting Strategies
+
+- Almost sorted array
+
+
+- Not known order of array
+
+Merge sort: O(n log n)
+
+- Sorted array
+
+insertion sort: O(n)
+bubble sorte: O(n)
+quick sort: O(n^2)
 
 ### algorithm types
 

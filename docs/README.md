@@ -56,7 +56,7 @@ Description: `Start on 0 index and make a comparison on each index until n.`
 
 Time: O(n)
 
-<p class="codepen" data-height="365" data-theme-id="dark" data-default-tab="js" data-user="web2solutions" data-slug-hash="wvobaVo" style="height: 365px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Busca linear - melhor cenário">
+<p class="codepen" data-height="509" data-theme-id="dark" data-default-tab="js" data-user="web2solutions" data-slug-hash="wvobaVo" style="height: 509px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Busca linear - melhor cenário">
   <span>See the Pen <a href="https://codepen.io/web2solutions/pen/wvobaVo">
   Busca linear - melhor cenário</a> by Eduardo Almeida (<a href="https://codepen.io/web2solutions">@web2solutions</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

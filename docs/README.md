@@ -45,6 +45,9 @@ Searching on arrays have multiple scenarios and you should ask yourself some que
 
 ### Sorted arrays
 
+**Problem**
+
+`Given an SORTED *arr* array of numbers, find the index of the **x** number`
 
 #### Search type #1 -> Linear Search
 

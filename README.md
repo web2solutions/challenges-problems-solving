@@ -36,9 +36,9 @@ sorted array with desired number at the end of the array
 `Scenario 3: `
 
 unknow order arrar 
-#### Sorted arrays
+### Sorted arrays
 
-- Linear search `best case` O(n)
+#### Linear search `best case` O(n)
 
 Description: `Start on 0 index and make a comparison on each index until n.`
 
@@ -63,7 +63,7 @@ function linearSearch1(arr, x) {
 linearSearch1(arr, x)
 ```
 
-- Linear search `worst case`
+#### Linear search `worst case`
 
 Start on 0 index AND n-1 index (end)
 Make a comparison with both
@@ -97,7 +97,7 @@ function linearSearch2(arr, x) {
 linearSearch2(arr, x)
 ```
 
-- Binary Search
+#### Binary Search
 
 Description: `Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.`
 

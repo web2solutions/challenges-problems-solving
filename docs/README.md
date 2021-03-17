@@ -49,15 +49,16 @@ Searching on arrays have multiple scenarios and you should ask yourself some que
 
 `Given an SORTED` *arr* `array of numbers, find the index of the `**x** `number`
 
-#### Search type #1 -> Linear Search
 
-##### Linear search `best case` -> **desired number in the beginning of array**
+#### Linear search 
+
+`Best case` -> **desired number in the beginning of array**
 
 **Solution**
 
 Description: `Start on 0 index and make a comparison on each index until n.`
 
-Time: O(n)
+Time: `O(n)`
 
 <p class="codepen" data-height="537" data-theme-id="dark" data-default-tab="js,result" data-user="web2solutions" data-slug-hash="wvobaVo" style="height: 537px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Busca linear - melhor cenário">
   <span>See the Pen <a href="https://codepen.io/web2solutions/pen/wvobaVo">
@@ -68,7 +69,9 @@ Time: O(n)
 
 <br><br>
 
-##### Linear search `worst case` ->  **desired number in the end of array**
+
+
+`Worst case` ->  **desired number in the end of array**
 
 Used When desired number is in the enf of the given array
 
@@ -116,7 +119,7 @@ function linearSearch2(arr, x) {
 linearSearch2(arr, x)
 ```
 
-#### Search type #2 -> Binary Search
+#### Binary Search
 
 Description: `Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.`
 

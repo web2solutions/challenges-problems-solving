@@ -42,7 +42,9 @@ This repo is just about some performance benchmarks, challenges and problem solv
 
 #### Search type #1 -> Linear Search
 
-##### Linear search `best case` -> ***desired number in the beginning of array***
+##### Linear search `best case` -> **desired number in the beginning of array**
+
+**Solution**
 
 Description: `Start on 0 index and make a comparison on each index until n.`
 
@@ -67,7 +69,7 @@ function linearSearch1(arr, x) {
 linearSearch1(arr, x)
 ```
 
-##### Linear search `worst case` ->  ***desired number in the end of array***
+##### Linear search `worst case` ->  **desired number in the end of array**
 
 Start on 0 index AND n-1 index (end)
 Make a comparison with both

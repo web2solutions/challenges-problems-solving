@@ -23,7 +23,7 @@ This repo is just about some performance benchmarks, challenges and problem solv
 ## Arrays
 
 
-### Searches Strategies
+### Search Strategies
 
 `Scenario 1: `
 

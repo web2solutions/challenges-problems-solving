@@ -38,7 +38,10 @@ sorted array with desired number at the end of the array
 unknow order arrar 
 ### Sorted arrays
 
-#### Linear search `best case` O(n)
+
+#### Linear Search
+
+##### Linear search `best case` O(n)
 
 Description: `Start on 0 index and make a comparison on each index until n.`
 
@@ -63,7 +66,7 @@ function linearSearch1(arr, x) {
 linearSearch1(arr, x)
 ```
 
-#### Linear search `worst case`
+##### Linear search `worst case`
 
 Start on 0 index AND n-1 index (end)
 Make a comparison with both

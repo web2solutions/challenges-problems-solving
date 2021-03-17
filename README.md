@@ -25,6 +25,12 @@ This repo is just about some performance benchmarks, challenges and problem solv
 
 ### Search Strategies
 
+Searching on arrays have multiple scenarios and you should ask yourself some questions like:
+
+1. Is the given array a sorted array?
+2. Do you know, `more or less`, where the item which you are searching for is located at? In the beginning or in the end of the given array?
+2. What is the lenght of given array?
+
 ***`Scenario 1:`***
 
 ***Sorted*** array with desired number at the begining of the array

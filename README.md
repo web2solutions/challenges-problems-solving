@@ -57,12 +57,13 @@ Description: `Start on 0 index and make a comparison on each index until n.`
 Time: O(n)
 
 ```javascript
-let total = 100000 // 100k
 const arr = []
 const x = 2
-for (let x = 0; x <= total; x++) {
-  arr.push(x)
+const total = 100000 // 100k
+for (let i = 0; i <= total; i++) {
+  arr.push(i)
 }
+
 
 function linearSearch1(arr, x) {
   let n = arr.length
@@ -86,11 +87,11 @@ if element Not found O(n) to O(n/2)
 
 
 ```javascript
-let total = 100000 // 100k
 const arr = []
 const x = 99999
-for (let x = 0; x <= total; x++) {
-  arr.push(x)
+const total = 100000 // 100k
+for (let i = 0; i <= total; i++) {
+  arr.push(i)
 }
 
 function linearSearch2(arr, x) {

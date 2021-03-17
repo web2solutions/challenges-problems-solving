@@ -10,14 +10,33 @@ console.log(`
  */
 console.log('------ prepare data')
 
-let total = 100000 // 10 million
+const total = 100000 // 10 million
 const arr = []
 const x = 2
-for (let x = 0; x <= total; x++) {
-  arr.push(x)
+for (let i = 0; i <= total; i++) {
+  arr.push(i)
 }
 
 console.log('------ starting perf')
+
+
+function binarySearch(arr, x) {
+  let found = -1
+  let n = arr.length
+  let halfIndex = Math.floor(n / 2)
+  let halfValue = 
+  let leftIndex = halfIndex - 1
+  let rightIndex = halfIndex + 1
+  let leftValue = arr[leftIndex]
+  let rightValue = arr[rightIndex]
+
+  return found
+}
+
+console.log(binarySearch(arr, x))
+
+
+return
 
 
 // add tests
@@ -36,7 +55,7 @@ suite
     }
     linearSearch1(arr, x)
   })
-  
+
   .add('Linear search improved for worst case', function () {
     // start on 0 index AND n-1 index (end)
     // make a comparison with both

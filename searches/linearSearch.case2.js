@@ -10,11 +10,11 @@ console.log(`
  */
 console.log('------ prepare data')
 
-let total = 100000 // 10 million
+const total = 100000 // 10 million
 const arr = []
 const x = 99999
-for (let x = 0; x <= total; x++) {
-  arr.push(x)
+for (let i = 0; i <= total; i++) {
+  arr.push(i)
 }
 
 console.log('------ starting perf')

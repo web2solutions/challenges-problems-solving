@@ -1,6 +1,6 @@
 # Solucionando desafios e problemas com algorítimos.
 
-**Guia básico de `Estrutura de Dados` para desenvolvedores de lingua portuguesa.**
+**Guia básico de `Estrutura de Dados` para desenvolvedores Javascript de lingua portuguesa.**
 
 O mercado nunca esteve tão bom para desenvolvedores front end, back end, full stack e engenheiros de sofwares.
 
@@ -24,6 +24,8 @@ Em alguns casos, o próprio enumerado do problema já esconde algum tipo de `peg
 4. tries
 5. hashmap / hashtable
 6. binary tree
+
+
   - starts on 1 ends in m
   - the root is the indice 1
   - the parent of any indice is Math.floor(indice / 2). The indice one does not have parent

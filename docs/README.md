@@ -4,6 +4,17 @@
 
 O mercado nunca esteve tão bom para desenvolvedores front end, back end, full stack e engenheiros de sofwares.
 
+Com certeza o momento é favorável para se conseguir empregos. Mas os melhores empregos requerem basicamente 2 coisas:
+
+1. Saber inglês
+2. Saber `jogar` os `joguinhos` do `RH` e plataformas de testes usadas por eles.
+
+Enquanto você se vira pra resolver o #1 da lista acima, vou tentar te ajudar a se capacitar como `bom jogador` no item #2.
+
+Eu poderia dizer `ajudar a se capacitar profissionalmente`, mas isso tudo mais tem haver com sua capacidade `lógica` e `cognitiva` do que de fato saber programar.
+
+Isso tudo tem mais haver com `decorar patterns` para `tipos recorrentes de problemas`, do que ser capaz de criar um bom produto de software.
+
 A maioria dos testes técnicos aplicados em plataformas como `Hacker Rank` e `Code Signal`, são `gamificados`. Eles simulam problemas hipotéticos do dia á dia para serem solucionados através de algorítimos.
 
 Em alguns casos, o próprio enumerado do problema já esconde algum tipo de `pegadinha` para te fazer perder o foco no que mais importa nesse `jogo`:

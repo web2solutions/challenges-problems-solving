@@ -25,45 +25,47 @@ const corruptos = {}
 
 
 function minimumBribes(q) {
-  let swaps = 0;
+  let bribs = 0;
   let min = q.length;
   for (var position = q.length - 1; position >= 0; position--) {
     const actualNumber = q[position]
+    const nextIndex = position + 1
     if (actualNumber - position > 3) {
       return console.log(`Too chaotic`);
     }
-    if (actualNumber > position + 1) {
-      swaps += (actualNumber - (position + 1));
+    if (actualNumber > nextIndex) {
+      bribs += (actualNumber - nextIndex);
     } else {
       if (min > actualNumber) {
         min = actualNumber;
       } else if (actualNumber != min) {
-        swaps++;
+        bribs++;
       }
     }
   }
 
-  console.log(swaps)
+  console.log(bribs)
 }
 
 
 function minimumBribes3(q) {
-  console.log('INPUT', q)
+  // console.log('INPUT', q)
   const n = q.length
-  let iterated = 1
+  let min = q.length
+  let bribs = 0
   for (var position = n - 1; position >= 0; position--) {
     const actualNumber = q[position]
-    const nextNumber = q[position - 1]
-    const nextIndice = position - 1
+    // const nextNumber = q[position - 1]
+    const nextIndice = position + 1
     const next3Number = q[position - 3]
     
     // check chaotic
-    if (actualNumber < next3Number) {
-      // return console.log('Too chaotic')
+    if (actualNumber - position > 3) {
+      return console.log('Too chaotic')
     }
-    console.log(`proximo ${nextNumber}`, `atual ${actualNumber}`)
-    if (actualNumber > nextNumber) {
-      console.warn('   se o atual for menor que o proximo')
+    // console.log(`proximo ${nextNumber}`, `atual ${actualNumber}`)
+    if (actualNumber > nextIndice) {
+      /* console.warn('   se o atual for maior que o proximo')
       console.warn(`   tamanho do array ${n}  - posicao atual ${position} = ${n - position}`)
       // atual 3, proximo 5
       console.warn(`   >> actualNumber ${actualNumber}`)
@@ -71,19 +73,23 @@ function minimumBribes3(q) {
       console.warn(`   >> nextNumber ${nextNumber}`)
       console.warn(`   >> nextIndice ${nextIndice}`)
       console.warn(`   >> iterated ${iterated}`)
-      console.warn(`   >> bribs ${n - (nextIndice + 1)}`)
       
-      console.warn(`   >> total array ${n}`)
+      
+      console.warn(`   >> total array ${n}`)*/
+      bribs += (actualNumber - (position + 1))
+      
+    } else {
+      if (min > actualNumber) {
+        min = actualNumber;
+      } else if (actualNumber != min) {
+        bribs++;
+      }
     }
-
-
-    
-    iterated++
     
     
   }
   
-
+  console.warn(`${bribs}`)
   // callCount = callCount + 1
 }
 

@@ -1,3 +1,4 @@
+// https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3240/
 
 var sortedSquares = function (nums) {
     let direita = nums.length - 1;

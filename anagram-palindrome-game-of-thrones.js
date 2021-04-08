@@ -15,7 +15,7 @@ let currentLine = 0;
 
 
 /*
- * Complete the contacts function below.
+ * Complete function below.
  */
 
 function gameOfThrones(s) {

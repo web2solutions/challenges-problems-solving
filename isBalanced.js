@@ -2,13 +2,11 @@
 
 function isBalanced(str) {
   const allBrackets = []
-  
   const map = {
     '{': '}',
     '(': ')',
     '[': ']',
   }
-
   str = str.replace(new RegExp('[0-9]', 'g'), '')
   str = str.replace(new RegExp('[a-z A-Z]', 'g'), '')
   for (let x = 0; x < str.length; x++) {
@@ -16,18 +14,16 @@ function isBalanced(str) {
     if (char === '[' || char === '(' || char === '{') {
       allBrackets.push(char)
     } else {
-      const lastItem = allBrackets.pop()
-      if (char !== map[lastItem]) {
-        console.log(map[lastItem])
+      const closeBracket = allBrackets.pop()
+      if (char !== map[closeBracket]) {
+        console.log(map[closeBracket])
         return 'NO'
       }
     }
   }
-  
   if (allBrackets.length !== 0) {
    return 'NO'
   }
-
   return 'YES'
 }
 

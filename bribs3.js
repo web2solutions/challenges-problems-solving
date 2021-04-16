@@ -1,5 +1,7 @@
 'use strict';
 
+// https://www.hackerrank.com/challenges/new-year-chaos/problem
+
 const fs = require('fs');
 const { mainModule } = require('process');
 

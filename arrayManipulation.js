@@ -1,7 +1,7 @@
 'use strict'
 
 const assert = require('assert');
-// https://www.hackerrank.com/challenges/2d-array/leaderboard?limit=100&page=1\
+// https://www.hackerrank.com/challenges/crush/problem
 
 const fs = require('fs')
 

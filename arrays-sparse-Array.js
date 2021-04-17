@@ -1,6 +1,6 @@
 'use strict';
 
-https://www.hackerrank.com/challenges/sparse-arrays/problem
+// https://www.hackerrank.com/challenges/sparse-arrays/problem
 
 const fs = require('fs');
 const {
